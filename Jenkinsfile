@@ -21,6 +21,12 @@ pipeline {
           }
         }
 
+        stage('') {
+          steps {
+            sh 'ls'
+          }
+        }
+
       }
     }
 
