@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('git') {
       steps {
@@ -30,5 +30,19 @@ pipeline {
       }
     }
 
+    stage('docker') {
+      environment {
+        DOCKERHUB_USER = 'serko231'
+        DOCKERHUB_PASSWORD = 'Serega1722!'
+      }
+      steps {
+        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
+      }
+    }
+
+  }
+  environment {
+    DOCKERHUB_USER = 'serko231'
+    DOCKERHUB_PASSWORD = 'Serega1722!'
   }
 }
