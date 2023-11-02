@@ -36,7 +36,19 @@ pipeline {
         DOCKERHUB_PASSWORD = 'Serega1722!'
       }
       steps {
-        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
+        sh '''docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+
+
+
+
+
+'''
+      }
+    }
+
+    stage('ls') {
+      steps {
+        sh 'ls -la'
       }
     }
 
